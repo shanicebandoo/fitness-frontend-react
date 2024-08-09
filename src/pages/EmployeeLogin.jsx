@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../api';
 
-const Login = () => {
+const EmployeeLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ const Login = () => {
         if (data && data.token) {  
             localStorage.setItem('token', data.token);
             console.log('Login successful');
-            navigate('/profile');
+            navigate('/employeeprofile');
         } else {
             console.log('Unexpected response:', data);
         }
@@ -31,7 +30,7 @@ const Login = () => {
     
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Employee Login</h2>
         <input
           type="text"
           placeholder="Username"
@@ -47,12 +46,10 @@ const Login = () => {
           required
         />
         <button type="submit">Login</button>
-        <p>Not registered? <Link to="/signup">Sign up here!</Link>
-        </p>
       </form>
       
     </div>
   );
 };
 
-export default Login;
+export default EmployeeLogin;

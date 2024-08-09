@@ -24,3 +24,7 @@
     border: none;
     cursor: pointer;
   }
+
+  .login-container h2{
+    text-align: center;
+  }

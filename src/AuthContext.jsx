@@ -8,7 +8,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // Decode token and set user (assuming the token is a JWT)
       const user = JSON.parse(atob(token.split('.')[1]));
       setUser(user);
     }
@@ -16,6 +15,7 @@ const AuthProvider = ({ children }) => {
 
   const login = (userData) => {
     setUser(userData);
+    localStorage.setItem('token', userData.token);
   };
 
   const logout = () => {

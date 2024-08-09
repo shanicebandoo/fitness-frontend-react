@@ -1,10 +1,12 @@
 import React from 'react';
-import ImageSlider from '../components/ImageSlider'; // Adjust the import path as needed
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
     <div>
-      <ImageSlider />
+      <Banner />
+      <Footer />
     </div>
   );
 };
